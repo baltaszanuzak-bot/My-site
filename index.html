@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Zhanuzak</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ========== САЙДБАР ========== -->
+  <aside class="sidebar">
+
+    <!-- Логотип: SVG куб + название -->
+    <div class="logo">
+      <svg width="36" height="36" viewBox="0 0 48 48" fill="none">
+        <polygon points="4,14 24,4 44,14 24,24" fill="#1a5fa8"/>  <!-- верхняя грань -->
+        <polygon points="4,14 24,24 24,44 4,34" fill="#0d3060"/>  <!-- левая грань -->
+        <polygon points="44,14 24,24 24,44 44,34" fill="#0a2244"/> <!-- правая грань -->
+        <polyline points="26,26 34,18" stroke="#f97316" stroke-width="3" stroke-linecap="round" fill="none"/> <!-- стрелка -->
+        <polygon points="34,14 38,18 34,22 30,18" fill="#f97316"/> <!-- наконечник -->
+      </svg>
+      <span style="font-size:1.2rem;font-weight:800;color:#fff;letter-spacing:-.3px;">
+        Profi<span style="color:#f97316;">Space</span>
+      </span>
+    </div>
+
+    <!-- Аватар -->
+    <div class="avatar">👤</div>
+
+    <!-- Имя -->
+    <div class="name">Zhanuzak</div>
+
+    <!-- Роль -->
+    <span class="role">Frontend Dev</span>
+
+    <!-- Статистика: выполненные работы -->
+    <div class="stats">
+      <div class="stat-item">
+        <span class="stat-num">10+</span>
+        <span class="stat-label" data-t="statProjects">Жоба</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">5+</span>
+        <span class="stat-label" data-t="statClients">Клиент</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">1+</span>
+        <span class="stat-label" data-t="statYears">Жыл</span>
+      </div>
+    </div>
+
+    <!-- Навигация -->
+    <nav>
+      <a href="#about"><i class="fas fa-user"></i> <span data-t="navAbout">Обо мне</span></a>
+      <a href="#services"><i class="fas fa-briefcase"></i> <span data-t="navServices">Услуги</span></a>
+      <a href="#skills"><i class="fas fa-code"></i> <span data-t="navSkills">Навыки</span></a>
+      <a href="#projects"><i class="fas fa-folder"></i> <span data-t="navProjects">Проекты</span></a>
+      <a href="#reviews"><i class="fas fa-star"></i> <span data-t="navReviews">Отзывы</span></a>
+      <a href="#contact"><i class="fas fa-envelope"></i> <span data-t="navContact">Контакты</span></a>
+    </nav>
+
+    <!-- Кнопки языков -->
+    <div class="lang-btns">
+      <button class="active" onclick="setLang('ru')">RU</button>
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('kz')">KZ</button>
+    </div>
+
+  </aside>
+  <!-- ========== КОНЕЦ САЙДБАРА ========== -->
+
+
+  <!-- ========== ОСНОВНОЙ КОНТЕНТ ========== -->
+  <main class="content">
+
+    <!-- РАЗДЕЛ: О себе -->
+    <section id="about">
+      <p class="section-title" data-t="secAbout">Обо мне</p>
+      <h1 id="title">Привет, я <span>Zhanuzak</span> 👋</h1>
+      <p id="about-text">Я frontend разработчик и создаю современные сайты.</p>
+      <div class="btns">
+        <!-- Кнопка скачать CV -->
+        <a class="btn-main btn-orange" href="Zhanuzak.pdf" download>
+          <i class="fas fa-download"></i>
+          <span data-t="btnCV">Скачать CV</span>
+        </a>
+        <!-- Кнопка Telegram -->
+        <button class="btn-main" onclick="contact()">
+          <i class="fab fa-telegram"></i>
+          <span data-t="btnTg">Telegram</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- РАЗДЕЛ: Услуги и цены -->
+    <section id="services">
+      <p class="section-title" data-t="secServices">Услуги</p>
+      <div class="services-grid">
+
+        <!-- Карточка услуги 1 -->
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+          <h3 data-t="srv1Title">Landing Page</h3>
+          <p data-t="srv1Desc">Одностраничный сайт для бизнеса или продукта</p>
+          <div class="service-meta">
+            <span class="price" data-t="srv1Price">от 30 000 тг</span>
+            <span class="deadline"><i class="fas fa-clock"></i> <span data-t="srv1Days">3–5 дней</span></span>
+          </div>
+        </div>
+
+        <!-- Карточка услуги 2 -->
+        <div class="service-card">
+          <div class="service-icon blue"><i class="fas fa-store"></i></div>
+          <h3 data-t="srv2Title">Сайт-визитка</h3>
+          <p data-t="srv2Desc">Многостраничный сайт с разделами и контактами</p>
+          <div class="service-meta">
+            <span class="price" data-t="srv2Price">от 50 000 тг</span>
+            <span class="deadline"><i class="fas fa-clock"></i> <span data-t="srv2Days">5–7 дней</span></span>
+          </div>
+        </div>
+
+        <!-- Карточка услуги 3 -->
+        <div class="service-card">
+          <div class="service-icon green"><i class="fas fa-paint-brush"></i></div>
+          <h3 data-t="srv3Title">Верстка по макету</h3>
+          <p data-t="srv3Desc">Точная верстка по Figma-макету заказчика</p>
+          <div class="service-meta">
+            <span class="price" data-t="srv3Price">от 20 000 тг</span>
+            <span class="deadline"><i class="fas fa-clock"></i> <span data-t="srv3Days">2–4 дня</span></span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- РАЗДЕЛ: Навыки -->
+    <section id="skills">
+      <p class="section-title" data-t="secSkills">Навыки</p>
+      <div class="skills">
+        <span><i class="fab fa-html5"></i> HTML</span>
+        <span><i class="fab fa-css3-alt"></i> CSS</span>
+        <span><i class="fab fa-js-square"></i> JavaScript</span>
+        <span><i class="fab fa-figma"></i> Figma</span>
+        <span><i class="fab fa-git-alt"></i> Git</span>
+      </div>
+    </section>
+
+    <!-- РАЗДЕЛ: Проекты -->
+    <section id="projects">
+      <p class="section-title" data-t="secProjects">Проекты</p>
+      <div class="cards">
+
+        <a class="card" href="https://tyler-delta.vercel.app/login.html" target="_blank">
+          <div class="card-icon"><i class="fas fa-layer-group"></i></div>
+          <h3>ProfiSpace</h3>
+          <p data-t="descPS">Фриланс платформа с авторизацией, лентой заказов и чатом.</p>
+          <div class="live-badge"><i class="fas fa-circle" style="font-size:7px"></i> <span data-t="live">Live сайт</span></div>
+        </a>
+
+        <a class="card" href="https://tylerr-rjkf.vercel.app/" target="_blank">
+          <div class="card-icon blue"><i class="fas fa-globe"></i></div>
+          <h3>Cody Tech</h3>
+          <p data-t="descLand">Сайт для практики и обучения программированию</p>
+          <div class="live-badge"><i class="fas fa-circle" style="font-size:7px"></i> <span data-t="live">Live сайт</span></div>
+        </a>
+
+        <div class="card">
+          <div class="card-icon blue"><i class="fas fa-user-circle"></i></div>
+          <h3>Portfolio</h3>
+          <p data-t="descPort">Этот сайт — моё портфолио.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- РАЗДЕЛ: Отзывы клиентов -->
+    <section id="reviews">
+      <p class="section-title" data-t="secReviews">Отзывы</p>
+      <div class="reviews-grid">
+
+        <!-- Отзыв 1 -->
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text" data-t="rev1Text">"Сайт сделал быстро и качественно. Всё точно по макету, остался очень доволен!"</p>
+          <div class="review-author">
+            <div class="review-avatar">А</div>
+            <div>
+              <div class="review-name">Асет К.</div>
+              <div class="review-job" data-t="rev1Job">Владелец кафе</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Отзыв 2 -->
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text" data-t="rev2Text">"Отличная работа! Адаптивный дизайн работает на всех устройствах. Рекомендую!"</p>
+          <div class="review-author">
+            <div class="review-avatar">М</div>
+            <div>
+              <div class="review-name">Мадина Т.</div>
+              <div class="review-job" data-t="rev2Job">Интернет-магазин</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Отзыв 3 -->
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text" data-t="rev3Text">"Сделал лендинг за 4 дня. Вносил правки без лишних вопросов. Буду обращаться ещё!"</p>
+          <div class="review-author">
+            <div class="review-avatar">Д</div>
+            <div>
+              <div class="review-name">Дамир С.</div>
+              <div class="review-job" data-t="rev3Job">Фитнес-тренер</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- РАЗДЕЛ: Контакты -->
+    <section id="contact">
+      <p class="section-title" data-t="secContact">Контакты</p>
+      <div class="contact-box">
+        <div>
+          <h3 data-t="ctTitle">Готов к работе</h3>
+          <p data-t="ctSub">Напишите мне — отвечу быстро!</p>
+        </div>
+        <button class="tg-btn" onclick="contact()">
+          <i class="fab fa-telegram"></i>
+          <span data-t="btnTg">Telegram</span>
+        </button>
+      </div>
+    </section>
+
+  </main>
+  <!-- ========== КОНЕЦ ОСНОВНОГО КОНТЕНТА ========== -->
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
